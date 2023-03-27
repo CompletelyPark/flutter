@@ -221,32 +221,46 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Row(
+                      Column(
                         children: [
                           Visibility(
                             visible: _visibility,
                             child: TextButton(
                               onPressed: statefunc,
                               child: TextWidget(
-                                  input_text: breakState
-                                      ? 'BREAK ${format1(breakminutes)} MIN'
-                                      : 'POMODORO ${format1(priminutes)} MIN',
+                                  input_text:
+                                      breakState ? 'BREAK ' : 'POMODORO ',
                                   size: 20),
                             ),
                           ),
-                          Visibility(
-                            visible: _visibility,
-                            child: IconButton(
-                              onPressed: minustime,
-                              icon: Icon(Icons.arrow_downward),
-                            ),
-                          ),
-                          Visibility(
-                            visible: _visibility,
-                            child: IconButton(
-                              onPressed: plustime,
-                              icon: Icon(Icons.arrow_upward),
-                            ),
+                          Row(
+                            children: [
+                              Visibility(
+                                visible: _visibility,
+                                child: IconButton(
+                                  onPressed: minustime,
+                                  icon: Icon(Icons.arrow_downward),
+                                ),
+                              ),
+                              Visibility(
+                                visible: _visibility,
+                                child: TextButton(
+                                  onPressed: statefunc,
+                                  child: TextWidget(
+                                      input_text: breakState
+                                          ? '${format1(breakminutes)} MIN'
+                                          : '${format1(priminutes)} MIN',
+                                      size: 20),
+                                ),
+                              ),
+                              Visibility(
+                                visible: _visibility,
+                                child: IconButton(
+                                  onPressed: plustime,
+                                  icon: Icon(Icons.arrow_upward),
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
