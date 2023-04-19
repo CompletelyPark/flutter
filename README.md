@@ -17,3 +17,5 @@ samples, guidance on mobile development, and a full API reference.
 
 Flutter를 이용한 Pomodoro 앱 프로젝트입니다. 
 간단한 UI로 구성했으며 알람 및 추가적인 기능을 넣을 생각입니다.
+
+lib 파일에 각 화면 코드가 구성돼 있습니다.ㅣ
